@@ -1,16 +1,15 @@
 import React from "react";
-import logo from "./logo.svg";
-import "./App.css";
-import { Box } from "@material-ui/core";
+import { BrowserRouter as Router } from "react-router-dom";
+import AppRouter from "./components/AppRouter";
 import MainMenu from "./components/MainMenu";
 
 function App() {
   return (
-    <div className="App">
+    <Router>
       <MainMenu>
-        <h1>what sapooooooooooooo</h1>
+        <AppRouter />
       </MainMenu>
-    </div>
+    </Router>
   );
 }
 
