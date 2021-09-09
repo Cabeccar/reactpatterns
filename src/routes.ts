@@ -1,8 +1,11 @@
 
 import CompoundComponent from "./components/CompoundComponent/";
+import ControlProps from "./components/ControlProps";
 import CustomHook from "./components/CustomHook/";
 import ExtensibleStyles from "./components/ExtensibleStyles/";
 import Home from "./components/Home/";
+import  RenderProps  from "./components/RenderProps";
+import StateInitializer from "./components/StateInitializer";
 
 export interface Props {
     children?: React.ReactNode;
@@ -36,6 +39,20 @@ export const routes: Route[] = [
       label: 'Extensible Styles',
       Component: ExtensibleStyles,
     },
-  
+    {
+      path: '/render-props',
+      label: 'Render Props',
+      Component: RenderProps,
+    },
+    {
+      path: '/control-props',
+      label: 'Control Props',
+      Component: ControlProps,
+    },
+    {
+      path: '/state-initializer',
+      label: 'State Initializer',
+      Component: StateInitializer,
+    },
   ];
   
