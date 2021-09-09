@@ -1,6 +1,6 @@
-import {useState} from 'react';
+import { useState } from "react";
 
- const LikeButton = ({cb}) => {
+const LikeButton = ({ cb }) => {
   const [likes, setLikes] = useState(0);
 
   const handleClick = () => setLikes(cb(likes));

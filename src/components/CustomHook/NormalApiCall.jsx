@@ -1,6 +1,6 @@
-import React, {useState, useEffect} from 'react';
+import React, { useState, useEffect } from "react";
 
-const apiBaseUrl = 'https://api.github.com';
+const apiBaseUrl = "https://api.github.com";
 
 const url = `${apiBaseUrl}/orgs/Developero-oficial/repos?sort=created`;
 
@@ -30,7 +30,7 @@ export const NormalApiCall = () => {
   }, []);
 
   if (isFetching) {
-    return 'Loading...';
+    return "Loading...";
   }
 
   if (error) {
@@ -41,7 +41,7 @@ export const NormalApiCall = () => {
     return null;
   }
 
-  return data.map(({name, html_url}) => (
+  return data.map(({ name, html_url }) => (
     <div key={html_url}>
       <p>
         <a href={html_url} target="_blank" rel="noopener noreferrer">

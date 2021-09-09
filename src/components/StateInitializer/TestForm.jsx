@@ -1,13 +1,12 @@
-import useControlledForm from './hooks/useControlledForm';
+import useControlledForm from "./hooks/useControlledForm";
 
 const TestForm = () => {
-  const {formValues, handleChange, handleSubmit, resetForm} = useControlledForm(
-    {
-      name: '',
-    },
-  );
+  const { formValues, handleChange, handleSubmit, resetForm } =
+    useControlledForm({
+      name: "",
+    });
 
-  const showData = values => {
+  const showData = (values) => {
     alert(JSON.stringify(values));
     resetForm();
   };

@@ -1,6 +1,6 @@
-import {useState} from 'react';
+import { useState } from "react";
 
- const ControlledLikeButton = ({value, setValue}) => {
+const ControlledLikeButton = ({ value, setValue }) => {
   const isControlled = value !== undefined && setValue !== undefined;
 
   const [likes, setLikes] = useState(0);

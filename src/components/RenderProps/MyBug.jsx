@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, { useState } from "react";
 
 const MyBug = () => {
   const [isError, setIsError] = useState(false);
@@ -8,7 +8,7 @@ const MyBug = () => {
   };
 
   if (isError) {
-    throw new Error(':(');
+    throw new Error(":(");
   }
 
   return <button onClick={handleCrash}>Throw Error</button>;

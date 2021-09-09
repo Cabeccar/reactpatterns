@@ -1,17 +1,17 @@
-import {useState} from 'react';
-import PropTypes from 'prop-types';
+import { useState } from "react";
+import PropTypes from "prop-types";
 
-export const Todo = ({title}) => {
+export const Todo = ({ title }) => {
   const [listTodos, setListTodos] = useState({});
 
-  const handleSubmit = inputValue => {
+  const handleSubmit = (inputValue) => {
     setListTodos({
       ...listTodos,
-      [inputValue]: {name: inputValue, isDone: false},
+      [inputValue]: { name: inputValue, isDone: false },
     });
   };
 
-  const toogleTodo = ({target: {name}}) => {
+  const toogleTodo = ({ target: { name } }) => {
     setListTodos({
       ...listTodos,
       [name]: {
@@ -28,10 +28,10 @@ export const Todo = ({title}) => {
   return (
     <div
       style={{
-        boxShadow: '0 4px 8px 0 rgba(0, 0, 0, 0.2)',
-        transition: '0.3s',
-        borderRadius: '5px',
-        padding: '8px',
+        boxShadow: "0 4px 8px 0 rgba(0, 0, 0, 0.2)",
+        transition: "0.3s",
+        borderRadius: "5px",
+        padding: "8px",
       }}
     >
       <TodoTitle>
@@ -48,19 +48,19 @@ export const Todo = ({title}) => {
   );
 };
 
-const TodoTitle = ({children}) => <header>{children}</header>;
+const TodoTitle = ({ children }) => <header>{children}</header>;
 
-const TodoForm = ({onSubmit}) => {
-  const [inputValue, setInputValue] = useState('');
+const TodoForm = ({ onSubmit }) => {
+  const [inputValue, setInputValue] = useState("");
 
-  const handleInputChange = ({target: {value}}) => {
+  const handleInputChange = ({ target: { value } }) => {
     setInputValue(value);
   };
 
-  const handleSubmit = e => {
+  const handleSubmit = (e) => {
     e.preventDefault();
     onSubmit(inputValue);
-    setInputValue('');
+    setInputValue("");
   };
 
   return (
@@ -79,10 +79,10 @@ const TodoForm = ({onSubmit}) => {
   );
 };
 
-const TodoList = ({list, onChange}) => {
+const TodoList = ({ list, onChange }) => {
   return (
     <ul>
-      {list.map(({name, isDone}) => (
+      {list.map(({ name, isDone }) => (
         <li key={name}>
           <label>
             <input
@@ -91,7 +91,7 @@ const TodoList = ({list, onChange}) => {
               checked={isDone}
               onChange={onChange}
             />
-            <span style={{textDecoration: isDone ? 'line-through' : ''}}>
+            <span style={{ textDecoration: isDone ? "line-through" : "" }}>
               {name}
             </span>
           </label>
@@ -118,7 +118,7 @@ TodoList.propTypes = {
     PropTypes.shape({
       name: PropTypes.string,
       isDone: PropTypes.bool,
-    }),
+    })
   ),
   onChange: PropTypes.func.isRequired,
 };

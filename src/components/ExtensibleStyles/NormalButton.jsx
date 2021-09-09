@@ -1,8 +1,8 @@
-import PropTypes from 'prop-types';
+import PropTypes from "prop-types";
 
-import './button.css';
+import "./button.css";
 
-export const Button = ({name, type, onClick, children}) => {
+export const Button = ({ name, type, onClick, children }) => {
   return (
     <button
       name={name}
@@ -17,7 +17,7 @@ export const Button = ({name, type, onClick, children}) => {
 
 Button.propTypes = {
   name: PropTypes.string,
-  type: PropTypes.oneOf(['button', 'submit']).isRequired,
+  type: PropTypes.oneOf(["button", "submit"]).isRequired,
   onClick: PropTypes.func,
   children: PropTypes.node.isRequired,
 };

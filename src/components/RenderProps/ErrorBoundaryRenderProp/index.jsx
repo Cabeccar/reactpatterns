@@ -1,15 +1,15 @@
-import {Component} from 'react';
+import { Component } from "react";
 
- class ErrorBoundaryRenderProp extends Component {
-  state = {hasError: false, error: null};
+class ErrorBoundaryRenderProp extends Component {
+  state = { hasError: false, error: null };
 
   componentDidCatch(error) {
-    this.setState({hasError: true, error});
+    this.setState({ hasError: true, error });
   }
 
   render() {
-    const {hasError, error} = this.state;
-    const {children} = this.props;
+    const { hasError, error } = this.state;
+    const { children } = this.props;
 
     if (hasError && !this.props.render) {
       return (

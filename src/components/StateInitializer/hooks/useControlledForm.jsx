@@ -1,14 +1,14 @@
-import {useState} from 'react';
+import { useState } from "react";
 
- const useControlledForm = (initialState = {}) => {
+const useControlledForm = (initialState = {}) => {
   const [formValues, setFormValues] = useState(initialState);
 
-  const handleChange = ({target}) => {
-    const {name, value} = target;
-    setFormValues({...initialState, [name]: value});
+  const handleChange = ({ target }) => {
+    const { name, value } = target;
+    setFormValues({ ...initialState, [name]: value });
   };
 
-  const handleSubmit = cb => e => {
+  const handleSubmit = (cb) => (e) => {
     e.preventDefault();
     cb(formValues);
   };
